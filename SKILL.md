@@ -21,13 +21,13 @@ Turn supplied images into polished C4D/Octane stills. The deliverable is a rende
 Use this core prompt for every item, replacing only bracketed fields when the user gives a preference:
 
 ```text
-Restyle the supplied image as a premium Cinema 4D + Octane Render animated-feature-film still. Preserve the original [subject identity, silhouette, pose, composition, camera angle, crop, prop placement, overlap order, and color zoning] exactly; do not redesign, simplify, add, remove, or swap any core element.
+Restyle the supplied image as a premium Cinema 4D + Octane Render animated-feature-film keyframe. Preserve the original [subject identity, silhouette, pose, composition, camera angle, crop, prop placement, overlap order, and color zoning] exactly; do not redesign, simplify, add, remove, or swap any core element. Preserve the scene's environmental storytelling rather than turning it into an isolated product catalogue image.
 
-Translate the image into refined stylized 3D with rounded, deliberate hard-surface and soft-sculpture forms, clean large shape language, precise bevels, controlled secondary facets, and physically coherent depth. Materials are a sophisticated mix of creamy ceramic, satin-finish designer resin, soft-touch rubber, translucent colored glass, and restrained candy-glaze accents. Keep most surfaces velvety semi-matte; reserve glossy highlights for eyes, wet details, liquid, glass, enamel, jewelry, or intentional polished accents. No cheap toy PVC, no dirty texture, no generic plastic sheen.
+Translate the image into refined stylized 3D with rounded, generous soft-sculpture forms, elegant large shape language, soft controlled bevels, and physically coherent depth. Build a clear material hierarchy: luminous translucent gel-glass and softly glowing colored resin for color masses; warm polished gold or pearlescent enamel only for focal trims; creamy ceramic and satin designer resin for supporting forms. Let translucent pieces carry gentle internal gradients, soft caustics, and light-wrapped edges. Keep hard surface detailing subordinate to the character and the light; no overly technical bevel display, cheap toy PVC, dirty texture, or generic plastic sheen.
 
-Preserve the source palette faithfully: bright, luminous, high-chroma but refined colors, rendered as material color rather than a filter. Use a clear sky-blue environment, warm sunlight from upper back/side, broad soft fill, pale cyan and warm peach shadow separation, subtle subsurface scattering where appropriate, delicate contact shadows, restrained bloom, soft atmospheric depth, and clean high-key exposure with no clipped highlights. [Keep the original background / extend only the background naturally / use a warm off-white studio cyclorama].
+Preserve the source palette faithfully: bright, luminous, high-chroma but refined colors, rendered as material color rather than a filter. Default to a sun-drenched outdoor animated-film atmosphere: a large warm sun source from upper left or upper back, gentle haze, radiant light shafts, warm light wrap, pale sky-blue ambient fill, peach-and-cream bounce light, soft atmospheric perspective, foreground bokeh, and a softly blurred believable environment. Keep environmental architecture, landscape, or scene cues when they are present in the source; extend them naturally with depth rather than replacing them with an empty sky. Use a warm off-white studio cyclorama only when the user explicitly requests a product catalogue render. Exposure is luminous and airy, with soft highlight roll-off and no clipped highlights.
 
-Cinema 4D art direction, Octane Render material realism, high-end stylized animated film, polished editorial visual design, [preserve original lens and framing / extreme close-up wide-angle low angle with controlled Dutch tilt], layered foreground-midground-background depth, soft cinematic depth of field, pristine 3D rendering, luminous midtones, detailed but calm surfaces.
+Cinema 4D art direction, Octane Render material realism, high-end stylized animated-film keyframe, polished editorial visual design, [preserve original lens and framing / use a gentle low-angle cinematic perspective], layered foreground-midground-background depth, soft cinematic depth of field, sunlight bloom only at the light source, luminous midtones, detailed but calm surfaces, emotionally inviting and spatially alive.
 ```
 
 Use the original lens and framing by default. Add the dynamic close-up clause only when the source already has, or the user explicitly wants, that energetic cinematic perspective.
@@ -37,7 +37,7 @@ Use the original lens and framing by default. Add the dynamic close-up clause on
 Append this constraint block unless the user explicitly requests an exception:
 
 ```text
-no composition change, no identity change, no altered pose, no changed crop, no extra characters, no missing props, no random decorations, no text changes, no logo changes, no photorealistic human skin, no flat 2D lineart, no low-poly, no cheap plastic toy, no PVC, no dirty texture, no gray desaturation, no dark moody lighting, no harsh HDR, no neon, no heavy bloom, no digital noise, no watermark
+no composition change, no identity change, no altered pose, no changed crop, no extra characters, no missing props, no random decorations, no text changes, no logo changes, no isolated catalogue look, no empty generic sky, no photorealistic human skin, no flat 2D lineart, no low-poly, no cheap plastic toy, no PVC, no dirty texture, no gray desaturation, no dark moody lighting, no harsh HDR, no neon, no full-frame heavy bloom, no digital noise, no watermark
 ```
 
 ## Material routing
@@ -60,6 +60,7 @@ Before each result, confirm internally that its aspect ratio, subject count, key
 
 ## Defaults and boundaries
 
-- Default output: same aspect ratio as the input, bright sky-blue/peach high-key lighting, premium candy-ceramic Octane look.
+- Default output: same aspect ratio as the input, a sun-drenched animated-film keyframe with atmospheric environment, premium translucent candy-ceramic Octane look.
+- Product catalogue / white cyclorama is an explicit mode, not the default.
 - If the user asks for a different palette or setting, preserve the source's material hierarchy and composition while adapting only the requested look.
 - For a request for actual `.c4d`, mesh, UV, texture maps, or render settings, explain that this skill produces render images and ask whether they want a separate 3D-production specification.
